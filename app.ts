@@ -134,3 +134,72 @@
 // }
 
 
+// type Book={
+//   name: string;
+//   price: number;
+// }
+// type Book={
+//   size: number;
+// }
+// const book:Book={
+//   name: "Harry Potter",
+//   price: 15,
+//   size: 10,
+// };
+
+// type SanitizedString=string;
+// type EvenNumber=number;
+
+// interface  SanitizedString extends string {
+
+// }  //extends property is not supoort in type aliases
+
+
+
+
+//unions
+
+type ID=number | string;
+//Narrowing
+// function printId(id:ID){
+//   if(typeof id === 'string'){
+//   console.log(id.toUpperCase());
+//   }
+//   else
+//   {
+//     console.log(id);
+//   }
+// }
+
+// printId('1'); 
+
+// function getFirstThree(x:string | number[]){
+//   return x.slice(0,3);
+// }
+// console.log(getFirstThree([1,2,3,4,5]));
+
+
+
+//Generics
+
+// function logString(arg:string){
+//   console.log(arg);
+//   return arg;
+// }
+// function logNumber(arg:number){
+//   console.log(arg);
+//   return arg;
+// }
+// function logArray(arg:any[]){
+//   console.log(arg);
+//   return arg;
+// }
+// function logAnything<T>(arg:T):T{
+//   console.log(arg);
+//   return arg;
+// }
+// logAnything([1,2]);
+// logArray([4,3]);
+
+// logString('logged in');
+
