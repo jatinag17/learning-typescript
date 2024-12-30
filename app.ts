@@ -91,28 +91,46 @@
 
 
 //Extend
-interface Book{
-  name:string;
-  price:number;
-}
-interface EBook extends Book{
-  // name:string;
-  // price:number;
-  fileSize:number;
-  format:string;
-}
+// interface Book{
+//   name:string;
+//   price:number;
+// }
+// interface EBook extends Book{
+//   // name:string;
+//   // price:number;
+//   fileSize:number;
+//   format:string;
+// }
 
-interface AudioBook extends EBook{
-  // name:string;
-  // price:number;
-  // fileSize:number;
-  // format:string;
-  duration:number;
-}
-const book:AudioBook={
-  name: "Harry Potter",
-  price: 15,
-  fileSize: 1000,
-  format: "pdf",
-  duration: 120,
-};
+// interface AudioBook extends EBook{   //use of extends to remove duplicacy
+//   // name:string;
+//   // price:number;
+//   // fileSize:number;
+//   // format:string;
+//   duration:number;
+// }
+// const book:AudioBook={
+//   name: "Harry Potter",
+//   price: 15,
+//   fileSize: 1000,
+//   format: "pdf",
+//   duration: 120,
+// };
+
+
+// Merging
+
+// interface Book{
+//   name: string;
+//   price: number;
+// }
+// interface Book{
+//   size: number;
+// }
+// const book:Book={
+//   name: "Harry Potter",
+//   price: 15,
+//   size: 10,
+// }
+
+
