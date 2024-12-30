@@ -51,6 +51,68 @@
 // console.log(login({name: "John", age:30})); 
 
 
-type ID=number | string;
+// type ID=number | string;
 
-const userId:ID='123'; 
+// const userId:ID='123'; 
+
+
+
+
+//Interfaces
+
+// interface Transaction{
+//   payerAccountNumber:number;
+//   payeeAccountNumber:number;
+// }
+// interface BankAccount{
+//   accountNumber:number;
+//   accountHolder:string;
+//   balance:number;
+//   isActive:boolean;
+//   transactions:Transaction[];
+// }
+
+// const transaction1: Transaction={
+//   payerAccountNumber:123,
+//   payeeAccountNumber:455,
+// }
+// const transaction2: Transaction = {
+//   payerAccountNumber: 123,
+//   payeeAccountNumber: 456,
+// };
+
+// const bankAccount:BankAccount={
+//   accountNumber:123,
+//   accountHolder:"John Doe",
+//   balance:1000,
+//   isActive:true,
+//   transactions:[transaction1, transaction2],
+// };  
+
+
+//Extend
+interface Book{
+  name:string;
+  price:number;
+}
+interface EBook extends Book{
+  // name:string;
+  // price:number;
+  fileSize:number;
+  format:string;
+}
+
+interface AudioBook extends EBook{
+  // name:string;
+  // price:number;
+  // fileSize:number;
+  // format:string;
+  duration:number;
+}
+const book:AudioBook={
+  name: "Harry Potter",
+  price: 15,
+  fileSize: 1000,
+  format: "pdf",
+  duration: 120,
+};
