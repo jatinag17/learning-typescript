@@ -260,33 +260,33 @@ type ID=number | string;
 
 
 //Structural typing/Duck typing
-interface ICredentials{
-  username:string;
-  password:string;
-  isAdmin:boolean;
-}
+// interface ICredentials{
+//   username:string;
+//   password:string;
+//   isAdmin:boolean;
+// }
 
-function login(credentials:ICredentials):boolean {
-  console.log(credentials);
-  return true;
-}
+// function login(credentials:ICredentials):boolean {
+//   console.log(credentials);
+//   return true;
+// }
 
-const user={
-  username:'Jatin',
-  password:'123',
-  isAdmin:true,
-};
-login(user); // login user with password and admin credentials in the database and return true 
+// const user={
+//   username:'Jatin',
+//   password:'123',
+//   isAdmin:true,
+// };
+// login(user); // login user with password and admin credentials in the database and return true 
 
-interface IAuth{
-  username:string;
-  password:string;
-  login(username:string, password:string)
-}
-const auth={
-  username:'Jatin',
-  password:'123',
-  login(username:string, password:string){
-    
-  }
-}
+// interface IAuth{
+//   username:string;
+//   password:string;
+//   login(username:string, password:string)
+// }
+// const auth={
+//   username:'Jatin',
+//   password:'123',
+//   login(username:string, password:string){
+
+//   }
+// }
