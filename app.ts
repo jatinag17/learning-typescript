@@ -227,32 +227,66 @@ type ID=number | string;
 // person.age
 
 
-interface IPost{
-  title:string;
-  id:number;
-  description:string;
-}
-interface IUser{
-  id:number;
-  name:string;  
-  age:number;
+// interface IPost{
+//   title:string;
+//   id:number;
+//   description:string;
+// }
+// interface IUser{
+//   id:number;
+//   name:string;  
+//   age:number;
+// }
+
+// const fetchPostData = async (path:string):Promise<IPost[]> =>{
+//   const response = await fetch(`http://example.com${path}`);
+// return response.json();
+// }
+// const fetchUserData = async (path: string): Promise<IUser[]> => {
+//   const response = await fetch(`http://example.com${path}`);
+//   return response.json();
+// };
+
+// const fetchData =async<ResultType>(path: string): Promise<ResultType> => {
+//  const response = await fetch(`http://example.com${path}`);
+//  return response.json();
+// };
+// (async() =>{
+// //const posts=await fetchPostData('/posts');
+// const posts=await fetchData<IPost[]>('/posts');
+//  posts[0].
+// })();
+
+
+
+//Structural typing/Duck typing
+interface ICredentials{
+  username:string;
+  password:string;
+  isAdmin:boolean;
 }
 
-const fetchPostData = async (path:string):Promise<IPost[]> =>{
-  const response = await fetch(`http://example.com${path}`);
-return response.json();
+function login(credentials:ICredentials):boolean {
+  console.log(credentials);
+  return true;
 }
-const fetchUserData = async (path: string): Promise<IUser[]> => {
-  const response = await fetch(`http://example.com${path}`);
-  return response.json();
-};
 
-const fetchData =async<ResultType>(path: string): Promise<ResultType> => {
- const response = await fetch(`http://example.com${path}`);
- return response.json();
+const user={
+  username:'Jatin',
+  password:'123',
+  isAdmin:true,
 };
-(async() =>{
-//const posts=await fetchPostData('/posts');
-const posts=await fetchData<IPost[]>('/posts');
- posts[0].
-})();
+login(user); // login user with password and admin credentials in the database and return true 
+
+interface IAuth{
+  username:string;
+  password:string;
+  login(username:string, password:string)
+}
+const auth={
+  username:'Jatin',
+  password:'123',
+  login(username:string, password:string){
+    
+  }
+}
