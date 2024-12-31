@@ -204,24 +204,55 @@ type ID=number | string;
 // logString('logged in');
 
 
-interface HasAge{
+// interface HasAge{
+//   age:number;
+// }
+// function getOldest<T extends HasAge>(people:T[]):T{
+//   return people.sort((a,b)=>b.age-a.age)[0];
+// }
+// const people:HasAge[]=[{age:30},{age:40},{age:10}];
+// interface Player{
+//   name:string;
+//   age:number;
+// }
+// const players:Player[]=[
+//   {name:'John',age:30},
+//   {name:'Jane',age:40},
+//   {name:'Tom',age:10}
+// ];
+
+//  const person= getOldest(players) as Player;
+
+// const person =getOldest(people);
+// person.age
+
+
+interface IPost{
+  title:string;
+  id:number;
+  description:string;
+}
+interface IUser{
+  id:number;
+  name:string;  
   age:number;
 }
-function getOldest<T extends HasAge>(people:T[]):T{
-  return people.sort((a,b)=>b.age-a.age)[0];
-}
-const people:HasAge[]=[{age:30},{age:40},{age:10}];
-interface Player{
-  name:string;
-  age:number;
-}
-const players:Player[]=[
-  {name:'John',age:30},
-  {name:'Jane',age:40},
-  {name:'Tom',age:10}
-];
 
-// const person= getOldest(players) as Player;
+const fetchPostData = async (path:string):Promise<IPost[]> =>{
+  const response = await fetch(`http://example.com${path}`);
+return response.json();
+}
+const fetchUserData = async (path: string): Promise<IUser[]> => {
+  const response = await fetch(`http://example.com${path}`);
+  return response.json();
+};
 
-const person =getOldest(people);
-person.age
+const fetchData =async<ResultType>(path: string): Promise<ResultType> => {
+ const response = await fetch(`http://example.com${path}`);
+ return response.json();
+};
+(async() =>{
+//const posts=await fetchPostData('/posts');
+const posts=await fetchData<IPost[]>('/posts');
+ posts[0].
+})();
