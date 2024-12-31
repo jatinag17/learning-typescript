@@ -203,3 +203,25 @@ type ID=number | string;
 
 // logString('logged in');
 
+
+interface HasAge{
+  age:number;
+}
+function getOldest<T extends HasAge>(people:T[]):T{
+  return people.sort((a,b)=>b.age-a.age)[0];
+}
+const people:HasAge[]=[{age:30},{age:40},{age:10}];
+interface Player{
+  name:string;
+  age:number;
+}
+const players:Player[]=[
+  {name:'John',age:30},
+  {name:'Jane',age:40},
+  {name:'Tom',age:10}
+];
+
+// const person= getOldest(players) as Player;
+
+const person =getOldest(people);
+person.age
