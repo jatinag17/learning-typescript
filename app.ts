@@ -159,7 +159,7 @@
 
 //unions
 
-type ID=number | string;
+// type ID=number | string;
 //Narrowing
 // function printId(id:ID){
 //   if(typeof id === 'string'){
